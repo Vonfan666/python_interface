@@ -1,0 +1,2222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>自动化测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+    font-size: 16pt;
+    color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.button{  
+    border:1px solid #cccccc;  
+    cursor:pointer;  
+    margin:10px 5px;  
+    height:40px;  
+    text-align:center;  
+    border-radius: 4px;  
+    border-color: #636263 #464647 #A1A3A5;  
+    text-shadow: 0 1px 1px #F6F6F6;  
+    background-image: -moz-linear-gradient(center top, #D9D9D9, #A6A6A6 49%, #A6A6A6 50%);  
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #D9D9D9),color-stop(1, #A6A6A6));  
+}  
+
+.buttonText{  
+    position:relative;  
+    font-weight:bold;  
+    top:10px;
+    color:#58595B;  
+}   
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+.panel .description{  
+    border:1px solid #CCCCCC;  
+    border-color: #636263 #464647 #A1A3A5;  
+    margin:10px 5px;  
+    height:165px;  
+    border-radius: 4px;  
+}  
+.scroll-item {  
+    position: relative;  
+    width: 100%;  
+    height: 32px;  
+    border-bottom:1px solid gray;  
+    cursor: pointer;  
+}  
+.item-even {  
+    background-color: #E7E8EC;  
+}  
+      
+.item-odd {  
+    background-color: #E0ECF6;  
+}  
+.rect {  
+    float: left;  
+    margin-top: 5px;  
+    margin-left: 5px;  
+    width: 20px;  
+    height: 20px;  
+    border-radius: 3px;  
+}  
+.item-text{  
+    margin-left: 5px;  
+    height: 100%;  
+    float: left;  
+    font-size: 14px;   
+    vertical-align: middle;  
+    display: inline-block;  
+    line-height: 30px;  
+}  
+
+.bg{  
+    position:absolute;  
+    height:97%;  
+    width:80%;  
+    overflow-x: hidden;  
+    overflow-y:hidden;  
+}  
+.panel{  
+    position:absolute;  
+    height:550px;  
+    width:750px;  
+    left:45px;  
+    top:45px;  
+    border-radius: 12px;  
+    background-image: -moz-linear-gradient(top,#EBEBEB, #BFBFBF);  
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #EBEBEB),color-stop(1, #BFBFBF));  
+    }  
+.panel1{  
+    position:absolute;  
+    height:550px;  
+    width:200px;  
+    left:800px;  
+    top:45px;  
+    border-radius: 12px;  
+    background-image: -moz-linear-gradient(top,#EBEBEB, #BFBFBF);  
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #EBEBEB),color-stop(1, #BFBFBF));  
+    } 
+.panelBg{  
+    position:absolute;  
+    height:600px;  
+    width:1000px;  
+    left:20px;  
+    top:20px;  
+    border-radius: 12px;  
+    background-color:#000000;  
+    opacity:0.5;  
+}  
+
+.title{  
+    border:1px solid green;  
+    position:relative;  
+    margin:5px;  
+    font-size:22px;  
+    font-weight:bold;  
+    text-align:center;  
+    color:#58595B;  
+} 
+
+.piechart{  
+    border:1px solid green;  
+    margin:5px;  
+    height:170px;  
+} 
+
+.barchart{  
+    border:1px solid green;  
+    margin:5px;  
+    height:170px;  
+}  
+
+.linechart{  
+    border:1px solid green;  
+    margin:5px;  
+    height:170px;  
+} 
+     
+.subTitle{  
+    border:1px solid green;  
+    margin:5px;   
+    font-size:14px;  
+    height:70px;  
+    font-weight:bold;  
+    text-indent:2em;  
+    color:#6D6E71;  
+}  
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 2px solid #777;
+    padding: 3px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; font-weight: bold;}
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+#section1{  
+    border:1px solid green;  
+    position:relative;  
+    float:left;  
+    width:235px;  
+    height:530px;  
+    top:10px;  
+    left:10px;  
+}  
+#section2{  
+    border:1px solid green;  
+    position:relative;  
+    float:left;  
+    width:235px;  
+    height:530px;  
+    top:10px;  
+    left:20px;  
+}  
+#section3{  
+    border:1px solid green;  
+    position:relative;  
+    float:left;  
+    width:235px;  
+    height:530px;  
+    top:10px;  
+    left:30px;  
+}  
+#section4{  
+    border:1px solid green;  
+    position:relative;  
+    float:left;  
+    width:180px;  
+    height:530px;  
+    top:10px;  
+    left:10px;  
+}  
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body style="background-color:#C0C0C0" >
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Pass; 2:Fail; 3:Error; 4:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'Ft') {
+            if (level == 2) {
+                tr.className = '';
+            }
+            else if(level == 4) {
+                tr.className = '';
+            }
+            else if(level == 5) {
+                tr.className = '';
+            }
+            else{
+                tr.className = 'hiddenRow';
+            }
+        }
+        if (id.substr(0,2) == 'Pt') {
+            if (level == 1) {
+                tr.className = '';
+            }
+            else if(level == 4 ) {
+                tr.className = '';
+            }
+            else{
+                tr.className = 'hiddenRow';
+            }
+        }
+        if (id.substr(0,2) == 'Et') {
+            if (level == 3) {
+                tr.className = '';
+            }
+            else if(level == 4 ) {
+                tr.className = '';
+            }
+            else if(level == 5 ) {
+                tr.className = '';
+            }
+            else{
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'F' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'P' + tid0;
+            tr = document.getElementById(tid);
+            if(!tr){
+                tid = 'E' + tid0;
+                tr = document.getElementById(tid);
+            }
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>自动化测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2018-09-05 18:21:11</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:28</p>
+<p class='attribute'><strong>Status:</strong> Pass 51 Failure 7</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Pass</a>
+<a href='javascript:showCase(2)'>Fail</a>
+<a href='javascript:showCase(3)'>Error</a>
+<a href='javascript:showCase(5)'>Fail&Error</a>
+<a href='javascript:showCase(4)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>CaseInfo</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case001_register.Test_login</td>
+    <td>9</td>
+    <td>9</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',9)">Detail</a></td>
+</tr>
+
+<tr id='Pt1.1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test01: 未注册手机号码第一次注册</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt1.1')" >
+        pass</a>
+
+    <div id='div_Pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt1.1: [2018-09-05 18:21:12,515](INFO)root : _______start_______
+[2018-09-05 18:21:13,006](INFO)root : ________over_______
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt1.2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test02: 已注册手机号码</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt1.2')" >
+        pass</a>
+
+    <div id='div_Pt1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt1.2: [2018-09-05 18:21:13,022](INFO)root : _______start_______
+[2018-09-05 18:21:13,217](INFO)root : ________over_______
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt1.3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test03: 验证一分种内只能申请一次</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt1.3')" >
+        pass</a>
+
+    <div id='div_Pt1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt1.3: [2018-09-05 18:21:13,224](INFO)root : _______start_______
+[2018-09-05 18:21:13,365](INFO)root : 注册登录/注册-Excel表格获取内容为：
+{'headers': {'origin': 'http://192.168.12.21:81', 'content-type': 'application/json', 'cache-control': 'no-cache', 'host': '192.168.12.21:81', 'postman-token': '15277086-6165-3ea0-aa1d-6c421dbbf646', 'referer': 'http://192.168.12.21:81/register/1', 'req-source': 'MWEB'}, 'url': 'http://192.168.12.21:81/shoppingmall/anon/getIdentifyingCode', 'data': 62302675}
+[2018-09-05 18:21:13,374](INFO)root : 随机生成手机号码为：13992287315
+[2018-09-05 18:21:13,374](INFO)root : 待传入json格式内容data是：{"phoneNum": "13992287315", "shopId": "62302675"}
+[2018-09-05 18:21:13,698](INFO)root : ________over_______
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt1.4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test04: 注册验证验证码</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt1.4')" >
+        pass</a>
+
+    <div id='div_Pt1.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt1.4: [2018-09-05 18:21:13,713](INFO)root : _______start_______
+[2018-09-05 18:21:14,084](INFO)root : ________over_______
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt1.5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test05: 设置密码ff123456</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt1.5')" >
+        pass</a>
+
+    <div id='div_Pt1.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt1.5: [2018-09-05 18:21:14,092](INFO)root : _______start_______
+&lt;class 'str'&gt; {"password": "ff123456", "key": "245e00d5342345e1a95704bea5c8fa7a"}
+[2018-09-05 18:21:14,681](INFO)root : ________over_______
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt1.6' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test06: 输入密码为纯数字</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt1.6')" >
+        pass</a>
+
+    <div id='div_Pt1.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt1.6: [2018-09-05 18:21:14,690](INFO)root : _______start_______
+&lt;class 'str'&gt; {"password": "1234567", "key": "6ff22eefd8544f67888abf3a736b37ee"}
+[2018-09-05 18:21:15,220](INFO)root : ________over_______
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt1.7' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test07: 输入密码为纯英文</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt1.7')" >
+        pass</a>
+
+    <div id='div_Pt1.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt1.7: [2018-09-05 18:21:15,230](INFO)root : _______start_______
+&lt;class 'str'&gt; {"password": "yiyhiohooh", "key": "aa0e4fb40fa547e4b6d1a140db12d943"}
+[2018-09-05 18:21:15,793](INFO)root : ________over_______
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt1.8' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test08: 输入密码低于六位</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt1.8')" >
+        pass</a>
+
+    <div id='div_Pt1.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt1.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt1.8: [2018-09-05 18:21:15,802](INFO)root : _______start_______
+&lt;class 'str'&gt; {"password": "123456", "key": "af4d337bb266491295d42bfc9e7154ff"}
+[2018-09-05 18:21:16,351](INFO)root : ________over_______
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt1.9' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test09: 设置密码大于二十位</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt1.9')" >
+        pass</a>
+
+    <div id='div_Pt1.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt1.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt1.9: [2018-09-05 18:21:16,361](INFO)root : _______start_______
+&lt;class 'str'&gt; {"password": "f123456789f1234567891", "key": "ac4aeba4a87943898d398104dadff1ed"}
+[2018-09-05 18:21:16,885](INFO)root : ________over_______
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_case002_login.Test_login</td>
+    <td>6</td>
+    <td>5</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',6)">Detail</a></td>
+</tr>
+
+<tr id='Ft2.1' class='none'>
+    <td class='failCase'><div class='testcase'>test01: 账号密码正确登录</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Ft2.1')" >
+        fail</a>
+
+    <div id='div_Ft2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Ft2.1: [2018-09-05 18:21:16,894](INFO)root : _______start_______
+[2018-09-05 18:21:17,065](INFO)root : 登录返回：{'msg': '登陆成功', 'systemCode': 104, 'statusCode': 0, 'data': {'data': 'eyJhbGciOiJSUzI1NiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAAAD3OOw_CIBQF4P9yZwYur0JHjYODk4NzK1TxAU1pE0nT_y7ExPWc-53cFUI_QIuSKxRMKk0g5TS79z5aV3LKCfiUoIW8hOzvLjxdBgLuM_4UY4ZV5bv5P6NrsCQ3QbuCtwU3QlKJTApqtECUrEykexyPtVSMU6YaCRuBx-zrucaeOiqUGrgQlHcGi-8Nt0pjY03Rr3jz4RyX6VrehNPlsIPtC7emIVrNAAAA.LOvgVrmK9AlY7_Zx1MwPzY_h6a9XXqEUithI-0nJyxENhnjoyF_CRNAEn87c_aH1NXheAMC4qCiox0r_GlhyUcTGwXykJd9kLI7Hy1GS87B7H4NphgEdBdeee7o3nphdnppb_HuVwbCuNT8hwvX-1hLXIg1thcya2WJRK7SM2gM'}}
+[2018-09-05 18:21:17,108](INFO)root : ________over_______
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\python_interface\feng_test_case\test_case002_login.py", line 28, in test01
+    msg='正确账号密码、shop_id，登录失败')
+AssertionError: '登录成功' != '登陆成功'
+- 登录成功
+?  ^
++ 登陆成功
+?  ^
+ : 正确账号密码、shop_id，登录失败
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt2.2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test02: 账号密码正确,shopid不正确</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt2.2')" >
+        pass</a>
+
+    <div id='div_Pt2.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt2.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt2.2: [2018-09-05 18:21:17,118](INFO)root : _______start_______
+[2018-09-05 18:21:17,263](INFO)root : 登录返回：{'msg': '账号或密码错误', 'systemCode': 104, 'statusCode': 1, 'data': {}}
+[2018-09-05 18:21:17,305](INFO)root : ________over_______
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt2.3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test03: 账号正确、密码错误，shopid正确</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt2.3')" >
+        pass</a>
+
+    <div id='div_Pt2.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt2.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt2.3: [2018-09-05 18:21:17,315](INFO)root : _______start_______
+[2018-09-05 18:21:17,460](INFO)root : 登录返回：{'msg': '账号或密码错误', 'systemCode': 104, 'statusCode': 1, 'data': {}}
+[2018-09-05 18:21:17,505](INFO)root : ________over_______
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt2.4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test04: 密码为空</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt2.4')" >
+        pass</a>
+
+    <div id='div_Pt2.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt2.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt2.4: [2018-09-05 18:21:17,513](INFO)root : _______start_______
+[2018-09-05 18:21:17,654](INFO)root : 登录返回：{'msg': '6-20位数字加字母组合!;请填写密码!;', 'systemCode': 103, 'statusCode': 400, 'data': {}}
+[2018-09-05 18:21:17,696](INFO)root : ________over_______
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt2.5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test05: 账号密码为空</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt2.5')" >
+        pass</a>
+
+    <div id='div_Pt2.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt2.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt2.5: [2018-09-05 18:21:17,704](INFO)root : _______start_______
+[2018-09-05 18:21:17,845](INFO)root : 登录返回：{'msg': '6-20位数字加字母组合!;您输入的手机号码有误!;请填写手机号!;请填写密码!;', 'systemCode': 103, 'statusCode': 400, 'data': {}}
+[2018-09-05 18:21:17,888](INFO)root : ________over_______
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt2.6' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test06: 账号错误，密码正确</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt2.6')" >
+        pass</a>
+
+    <div id='div_Pt2.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt2.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt2.6: [2018-09-05 18:21:17,898](INFO)root : _______start_______
+[2018-09-05 18:21:18,042](INFO)root : 登录返回：{'msg': '账号或密码错误', 'systemCode': 104, 'statusCode': 1, 'data': {}}
+[2018-09-05 18:21:18,095](INFO)root : ________over_______
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_case003_resetPassword.Test_banner</td>
+    <td>9</td>
+    <td>8</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',9)">Detail</a></td>
+</tr>
+
+<tr id='Pt3.1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_01: 发送验证码</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt3.1')" >
+        pass</a>
+
+    <div id='div_Pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt3.1: 成功!
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt3.2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_02: 发送验证码,并校验</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt3.2')" >
+        pass</a>
+
+    <div id='div_Pt3.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt3.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt3.2: {'msg': '成功!', 'systemCode': 103, 'statusCode': 0, 'data': {}}
+{'msg': '验证成功!', 'systemCode': 103, 'statusCode': 0, 'data': {'key': '01365ce940314a438436a4512f36303e'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt3.3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_03: 验证码核验错误</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt3.3')" >
+        pass</a>
+
+    <div id='div_Pt3.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt3.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt3.3: {'msg': '成功!', 'systemCode': 103, 'statusCode': 0, 'data': {}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt3.4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_04: 新旧密码相同</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt3.4')" >
+        pass</a>
+
+    <div id='div_Pt3.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt3.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt3.4: {'msg': '成功!', 'systemCode': 103, 'statusCode': 0, 'data': {}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt3.5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_05: 密码纯英文</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt3.5')" >
+        pass</a>
+
+    <div id='div_Pt3.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt3.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt3.5: {'msg': '成功!', 'systemCode': 103, 'statusCode': 0, 'data': {}}
+[2018-09-05 18:21:20,891](INFO)root : 修改密码为：fffffff
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt3.6' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_06: 密码存数字</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt3.6')" >
+        pass</a>
+
+    <div id='div_Pt3.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt3.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt3.6: {'msg': '成功!', 'systemCode': 103, 'statusCode': 0, 'data': {}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt3.7' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_07: 验证码小于六位</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt3.7')" >
+        pass</a>
+
+    <div id='div_Pt3.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt3.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt3.7: {'msg': '成功!', 'systemCode': 103, 'statusCode': 0, 'data': {}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt3.8' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_08: 验证码大于20位</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt3.8')" >
+        pass</a>
+
+    <div id='div_Pt3.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt3.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt3.8: {'msg': '成功!', 'systemCode': 103, 'statusCode': 0, 'data': {}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Ft3.9' class='none'>
+    <td class='failCase'><div class='testcase'>test_09: 输入正确密码</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Ft3.9')" >
+        fail</a>
+
+    <div id='div_Ft3.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Ft3.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Ft3.9: {'msg': '成功!', 'systemCode': 103, 'statusCode': 0, 'data': {}}
+[2018-09-05 18:21:23,566](INFO)root : ***********修改密码成功**************
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\python_interface\feng_test_case\test_case003_resetPassword.py", line 124, in test_09
+    self.assertEqual(response.json()['msg'],MyMethod().duQu_Excel('H5商城', '忘记密码',4,8),msg='修改密码失败')
+AssertionError: '修改密码成功!' != '新密码与旧密码相同!'
+- 修改密码成功!
++ 新密码与旧密码相同!
+ : 修改密码失败
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_case004_Home.Test_banner</td>
+    <td>12</td>
+    <td>11</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',12)">Detail</a></td>
+</tr>
+
+<tr id='Pt4.1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_01: 获取店铺模板信息</div></td>
+    <td colspan='4' align='center'>pass</td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt4.2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_02: 店铺id为空</div></td>
+    <td colspan='4' align='center'>pass</td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt4.3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_03: 店铺id不存在</div></td>
+    <td colspan='4' align='center'>pass</td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt4.4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_04: 首页列表获取</div></td>
+    <td colspan='4' align='center'>pass</td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt4.5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_05: shopId为空加载首页列表</div></td>
+    <td colspan='4' align='center'>pass</td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt4.6' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_06: 点击查看详情</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt4.6')" >
+        pass</a>
+
+    <div id='div_Pt4.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt4.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt4.6: 136
+http://192.168.12.21:81/goodsdetail/
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt4.7' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_07: goodsId与shopId不一致</div></td>
+    <td colspan='4' align='center'>pass</td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt4.8' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_08: goodsId为空，查看商品详情</div></td>
+    <td colspan='4' align='center'>pass</td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt4.9' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_09: shopid为空查看商品详情</div></td>
+    <td colspan='4' align='center'>pass</td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt4.10' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_10: 有库存一件，点击加入购物车</div></td>
+    <td colspan='4' align='center'>pass</td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Ft4.11' class='none'>
+    <td class='failCase'><div class='testcase'>test_11: 库存为零，加入购物车</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Ft4.11')" >
+        fail</a>
+
+    <div id='div_Ft4.11' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Ft4.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Ft4.11: Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\python_interface\feng_test_case\test_case004_Home.py", line 135, in test_11
+    msg='存在库存，加入购物车不成功')
+AssertionError: '商品库存不足' != '操作成功'
+- 商品库存不足
++ 操作成功
+ : 存在库存，加入购物车不成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt4.12' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_12: buyNum 传入大于1</div></td>
+    <td colspan='4' align='center'>pass</td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_case006_classification.Test_banner</td>
+    <td>9</td>
+    <td>6</td>
+    <td>3</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',9)">Detail</a></td>
+</tr>
+
+<tr id='Pt5.1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_001: 获取分类列表</div></td>
+    <td colspan='4' align='center'>pass</td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Ft5.2' class='none'>
+    <td class='failCase'><div class='testcase'>test_002: 获取分类商品列表，传入id不存在</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Ft5.2')" >
+        fail</a>
+
+    <div id='div_Ft5.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Ft5.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Ft5.2: Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\python_interface\feng_test_case\test_case006_classification.py", line 52, in test_002
+    self.assertEqual(eval(table.cell(2, 8).value)['msg'], response.json()['msg'], msg='没有提示店铺不存在')  # 断言msg执行成功
+AssertionError: '店铺不存在！;' != '操作成功'
+- 店铺不存在！;
++ 操作成功
+ : 没有提示店铺不存在
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt5.3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_003: 获取分类商品列表，传入id为空</div></td>
+    <td colspan='4' align='center'>pass</td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt5.4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_004: 获取全部的商品，功能暂未实现</div></td>
+    <td colspan='4' align='center'>pass</td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Ft5.5' class='none'>
+    <td class='failCase'><div class='testcase'>test_005: 获取指定分类的商品数量</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Ft5.5')" >
+        fail</a>
+
+    <div id='div_Ft5.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Ft5.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Ft5.5: Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\python_interface\feng_test_case\test_case006_classification.py", line 79, in test_005
+    self.assertEqual(number,number_response,msg='接口返回数据与查询数据数量不一致')
+AssertionError: 13 != 16 : 接口返回数据与查询数据数量不一致
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt5.6' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_006: 商品分类id为空,返回全部商品信息</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt5.6')" >
+        pass</a>
+
+    <div id='div_Pt5.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt5.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt5.6: 28
+28
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt5.7' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_007: 验证shopId与分类id不匹配</div></td>
+    <td colspan='4' align='center'>pass</td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Ft5.8' class='none'>
+    <td class='failCase'><div class='testcase'>test_008: 验证pageNum,返回第二页数据</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Ft5.8')" >
+        fail</a>
+
+    <div id='div_Ft5.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Ft5.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Ft5.8: Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\python_interface\feng_test_case\test_case006_classification.py", line 124, in test_008
+    self.assertEqual(number-10, number_response, msg='数量返回不对')
+AssertionError: 3 != 6 : 数量返回不对
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt5.9' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_009: 获取pageNum1和2，验证数据不重复</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt5.9')" >
+        pass</a>
+
+    <div id='div_Pt5.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt5.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt5.9: ['136', '137', '139', '140', '141', '142', '143', '145', '146', '147'] ['152', '241', '244', '245', '246', '257']
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_case007_shopping.Test_banner</td>
+    <td>8</td>
+    <td>7</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',8)">Detail</a></td>
+</tr>
+
+<tr id='Pt6.1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_001: 购物车列表请求</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt6.1')" >
+        pass</a>
+
+    <div id='div_Pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt6.1: [2018-09-05 18:21:29,160](INFO)root : ____________________start_________________
+[2018-09-05 18:21:29,335](INFO)root : 购物车列表请求返回内容：{'msg': '操作成功', 'systemCode': 103, 'statusCode': 0, 'data': [{'status': '1', 'title': '20180619181725测试商品-15', 'pictureUrl': 'http://192.168.12.21/images/2018/06/26/d57face2-23a0-448a-977b-4a3cf5d52830.jpg,http://192.168.12.21/images/2018/06/26/ff002b10-3945-405c-b210-3cb738583b71.gif,http://192.168.12.21/images/2018/06/26/554330d2-dafb-4510-87aa-a4d0ee50ae9f.jpg,http://192.168.12.21/images/2018/06/26/d57face2-23a0-448a-977b-4a3cf5d52830.jpg', 'mallId': '62302675', 'id': '689', 'goodId': '139', 'price': '7000', 'buyNum': 1, 'statusEnum': {'showText': '上架中', 'showValue': '1'}}, {'status': '1', 'title': '20180619181721测试商品-12', 'pictureUrl': 'http://192.168.12.21/images/2018/06/26/d57face2-23a0-448a-977b-4a3cf5d52830.jpg,http://192.168.12.21/images/2018/06/26/ff002b10-3945-405c-b210-3cb738583b71.gif,http://192.168.12.21/images/2018/06/26/554330d2-dafb-4510-87aa-a4d0ee50ae9f.jpg,http://192.168.12.21/images/2018/06/26/d57face2-23a0-448a-977b-4a3cf5d52830.jpg', 'mallId': '62302675', 'id': '690', 'goodId': '136', 'price': '18000', 'buyNum': 6, 'statusEnum': {'showText': '上架中', 'showValue': '1'}}]}
+[2018-09-05 18:21:29,345](INFO)root : 解析token得到：{'iat': 1536142880, 'nbf': 1536142580, 'exp': 1536229280, 'loginSource': 'MWEB', 'iss': 'yunyihenkey', 'systemCode': 103, 'user': {'shopId': '62302675', 'id': '74505125409841152'}, 'jti': '0a1ef83ef4a045ec84a688184d3b59a3'}
+[2018-09-05 18:21:29,371](INFO)root : 获取购物车商品数量列表：(('689', 1), ('690', 1), ('sum', 2))
+[2018-09-05 18:21:29,371](INFO)root : 购物车商品数量为：2
+[2018-09-05 18:21:29,372](INFO)root : 接口返回购物车商品数量为：2
+[2018-09-05 18:21:29,372](INFO)root : ____________________over__________________
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt6.2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_002: shop_id为空</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt6.2')" >
+        pass</a>
+
+    <div id='div_Pt6.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt6.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt6.2: [2018-09-05 18:21:29,381](INFO)root : ____________________start_________________
+{'msg': '操作成功', 'systemCode': 103, 'statusCode': 0, 'data': [{'status': '1', 'title': '20180619181725测试商品-15', 'pictureUrl': 'http://192.168.12.21/images/2018/06/26/d57face2-23a0-448a-977b-4a3cf5d52830.jpg,http://192.168.12.21/images/2018/06/26/ff002b10-3945-405c-b210-3cb738583b71.gif,http://192.168.12.21/images/2018/06/26/554330d2-dafb-4510-87aa-a4d0ee50ae9f.jpg,http://192.168.12.21/images/2018/06/26/d57face2-23a0-448a-977b-4a3cf5d52830.jpg', 'mallId': '62302675', 'id': '689', 'goodId': '139', 'price': '7000', 'buyNum': 1, 'statusEnum': {'showText': '上架中', 'showValue': '1'}}, {'status': '1', 'title': '20180619181721测试商品-12', 'pictureUrl': 'http://192.168.12.21/images/2018/06/26/d57face2-23a0-448a-977b-4a3cf5d52830.jpg,http://192.168.12.21/images/2018/06/26/ff002b10-3945-405c-b210-3cb738583b71.gif,http://192.168.12.21/images/2018/06/26/554330d2-dafb-4510-87aa-a4d0ee50ae9f.jpg,http://192.168.12.21/images/2018/06/26/d57face2-23a0-448a-977b-4a3cf5d52830.jpg', 'mallId': '62302675', 'id': '690', 'goodId': '136', 'price': '18000', 'buyNum': 6, 'statusEnum': {'showText': '上架中', 'showValue': '1'}}]}
+[2018-09-05 18:21:29,555](INFO)root : ____________________over__________________
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt6.3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_003: 商品加入购物车，验证购物车数量增加以及删除购物车商品</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt6.3')" >
+        pass</a>
+
+    <div id='div_Pt6.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt6.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt6.3: [2018-09-05 18:21:29,563](INFO)root : ____________________start_________________
+[2018-09-05 18:21:29,871](INFO)root : 加入购物车之前的商品数量是：2
+[2018-09-05 18:21:29,871](INFO)root : 原来的购物车中有效商品列表为：['139', '136']
+[2018-09-05 18:21:29,900](INFO)root : 该店铺下所有的分类列表为:((544, 62302675, '其他', 1, 1, 'admin', datetime.datetime(2018, 7, 25, 10, 7, 22), None, None), (545, 62302675, '家居百货家居百货', 20, 0, 'admin', datetime.datetime(2018, 7, 25, 10, 7, 22), '18800000000', datetime.datetime(2018, 8, 8, 14, 49, 10)), (547, 62302675, '食品食品食品食品食品', 12, 0, 'admin', datetime.datetime(2018, 7, 25, 10, 7, 22), '18800000000', datetime.datetime(2018, 7, 25, 16, 2, 3)), (548, 62302675, '母婴母婴母婴母婴母婴母婴', 13, 0, 'admin', datetime.datetime(2018, 7, 25, 10, 7, 22), '18800000000', datetime.datetime(2018, 7, 25, 16, 4, 6)), (549, 62302675, '美妆美妆美妆美妆', 14, 0, 'admin', datetime.datetime(2018, 7, 25, 10, 7, 22), '18800000000', datetime.datetime(2018, 7, 25, 16, 2, 20)), (565, 62302675, '测试0002', 15, 0, '18800000000', datetime.datetime(2018, 7, 25, 16, 41, 7), None, None), (567, 62302675, '测试0004', 16, 0, '18800000000', datetime.datetime(2018, 7, 25, 16, 41, 53), None, None), (568, 62302675, '测试0005', 17, 0, '18800000000', datetime.datetime(2018, 7, 25, 16, 42), None, None), (569, 62302675, '测试0007', 18, 0, '18800000000', datetime.datetime(2018, 7, 25, 16, 42, 8), None, None), (570, 62302675, '测试0008', 19, 0, '18800000000', datetime.datetime(2018, 7, 25, 16, 42, 15), None, None), (684, 62302675, '测试0009', 11, 0, '18800000000', datetime.datetime(2018, 8, 13, 9, 56, 17), '18800000000', datetime.datetime(2018, 8, 13, 9, 59, 23)), (685, 62302675, '测试000010', 10, 0, '18800000000', datetime.datetime(2018, 8, 13, 9, 59, 34), None, None), (686, 62302675, '测试000011', 9, 0, '18800000000', datetime.datetime(2018, 8, 13, 9, 59, 44), None, None), (687, 62302675, '测试00008', 8, 0, '18800000000', datetime.datetime(2018, 8, 13, 9, 59, 54), None, None))
+[2018-09-05 18:21:30,700](INFO)root : 根据分类id找出商品库存大于1的分类为：['258', '262', 'sum', '136', '139', '141', '143', '145', '146', '147', '152', '241', '244', '245', '246', '257', 'sum', '264', 'sum', '263', 'sum', '251', '252', '253', '254', '255', '256', 'sum', '249', '261', 'sum']
+['258', '262', '136', '139', '141', '143', '145', '146', '147', '152', '241', '244', '245', '246', '257', '264', '263', '251', '252', '253', '254', '255', '256', '249', '261']
+12
+[2018-09-05 18:21:31,549](INFO)root : 添加的商品id为：256
+[2018-09-05 18:21:31,700](INFO)root : 加入商品到购物车之后，购物车现存商品数量为：3
+{'msg': '操作成功', 'systemCode': 103, 'statusCode': 0, 'data': {}}
+[2018-09-05 18:21:32,119](INFO)root : 删除加入购物车的商品,购物车id：691
+[2018-09-05 18:21:32,119](INFO)root : ____________________over__________________
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt6.4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_004: 验证购物车单个商品删除</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt6.4')" >
+        pass</a>
+
+    <div id='div_Pt6.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt6.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt6.4: [2018-09-05 18:21:32,128](INFO)root : ____________________start_________________
+[2018-09-05 18:21:32,128](INFO)root : test_003已验证，购物车删除单个商品
+[2018-09-05 18:21:32,128](INFO)root : ____________________over__________________
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt6.5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_005: 购物车多个商品删除</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt6.5')" >
+        pass</a>
+
+    <div id='div_Pt6.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt6.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt6.5: [2018-09-05 18:21:32,137](INFO)root : ____________________start_________________
+[2018-09-05 18:21:32,348](INFO)root : goodIdListCode商品列表为：[255, 143]
+255
+[2018-09-05 18:21:33,079](INFO)root : 购物车商品id为：692
+{'msg': '操作成功', 'systemCode': 103, 'statusCode': 0, 'data': {}}
+143
+[2018-09-05 18:21:33,322](INFO)root : 购物车商品id为：209
+{'msg': '操作成功', 'systemCode': 103, 'statusCode': 0, 'data': {}}
+[2018-09-05 18:21:33,377](INFO)root : ____________________over__________________
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt6.6' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_006: 存在库存，购物车商品数量增加</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt6.6')" >
+        pass</a>
+
+    <div id='div_Pt6.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt6.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt6.6: [2018-09-05 18:21:33,401](INFO)root : ____________________start_________________
+[2018-09-05 18:21:33,628](INFO)root : goodIdListCode商品列表为：[254, 249]
+[2018-09-05 18:21:33,813](INFO)root : 分销商商品id为：254，已加入购物车
+[2018-09-05 18:21:34,022](INFO)root : 根据分销商商品id，获取加入购物车后的购物车id为：694
+[2018-09-05 18:21:34,246](INFO)root : 分销商商品id为：254的商品，增加商品数量
+[2018-09-05 18:21:34,440](INFO)root : ____________________over__________________
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt6.7' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_007: 加入购物车后-商品下架-新增数量</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt6.7')" >
+        pass</a>
+
+    <div id='div_Pt6.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt6.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt6.7: [2018-09-05 18:21:34,448](INFO)root : ____________________start_________________
+[2018-09-05 18:21:34,654](INFO)root : goodIdListCode商品列表为：[145, 249]
+[2018-09-05 18:21:34,844](INFO)root : 分销商商品id为：145，已加入购物车
+[2018-09-05 18:21:35,035](INFO)root : 根据分销商商品id，获取加入购物车后的购物车id为：493
+[2018-09-05 18:21:35,365](INFO)root : 分销商商品id为：145的商品，增加商品数量
+[2018-09-05 18:21:35,552](INFO)root : ____________________over__________________
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Ft6.8' class='none'>
+    <td class='failCase'><div class='testcase'>test_008: 加入购物车后-商品已售罄（未下架）--新增数量</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Ft6.8')" >
+        fail</a>
+
+    <div id='div_Ft6.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Ft6.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Ft6.8: [2018-09-05 18:21:35,561](INFO)root : ____________________start_________________
+[2018-09-05 18:21:35,763](INFO)root : goodIdListCode商品列表为：[264, 241]
+[2018-09-05 18:21:35,950](INFO)root : 分销商商品id为：264，已加入购物车
+[2018-09-05 18:21:36,127](INFO)root : 根据分销商商品id，获取加入购物车后的购物车id为：696
+[2018-09-05 18:21:36,428](INFO)root : 分销商商品id为：264的商品，增加商品数量
+[2018-09-05 18:21:36,654](INFO)root : ____________________over__________________
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\python_interface\feng_test_case\test_case007_shopping.py", line 235, in test_008
+    self.assertEqual(eval(table.cell(8,8).value)['msg'],response.json()['msg'],msg='添加购物车商品数量成功')
+AssertionError: '商品已下架!' != '操作成功'
+- 商品已下架!
++ 操作成功
+ : 添加购物车商品数量成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_case008_ProductDetails.Test_banner</td>
+    <td>5</td>
+    <td>5</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',5)">Detail</a></td>
+</tr>
+
+<tr id='Pt7.1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_001: 查看状态和库存正常的商品</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt7.1')" >
+        pass</a>
+
+    <div id='div_Pt7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt7.1: [2018-09-05 18:21:36,888](INFO)root : ____________________start_________________
+[2018-09-05 18:21:37,079](INFO)root : 获取的分销商商品id为：252
+[2018-09-05 18:21:37,246](INFO)root : 获取的商品id为：252，获取的商品状态为：1
+[2018-09-05 18:21:38,497](INFO)root : 获取商品状态为：1---上架中
+[2018-09-05 18:21:38,499](INFO)root : ____________________over__________________
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt7.2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_002: 库存已售罄查看商品详情</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt7.2')" >
+        pass</a>
+
+    <div id='div_Pt7.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt7.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt7.2: [2018-09-05 18:21:38,519](INFO)root : ____________________start_________________
+[2018-09-05 18:21:38,720](INFO)root : 获取的分销商商品id为：264
+[2018-09-05 18:21:38,937](INFO)root : 获取的商品id为：264，获取的商品状态为：2
+[2018-09-05 18:21:38,986](INFO)root : 获取商品状态为：2---已售罄
+[2018-09-05 18:21:39,040](INFO)root : ____________________over__________________
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt7.3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_003: 商品已下架，查看商品详情</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt7.3')" >
+        pass</a>
+
+    <div id='div_Pt7.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt7.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt7.3: [2018-09-05 18:21:39,065](INFO)root : ____________________start_________________
+[2018-09-05 18:21:39,272](INFO)root : 获取的分销商商品id为：251
+[2018-09-05 18:21:39,486](INFO)root : 获取的商品id为：251，获取的商品状态为：3
+[2018-09-05 18:21:39,533](INFO)root : 获取商品状态为：3---已下架
+[2018-09-05 18:21:39,585](INFO)root : ____________________over__________________
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt7.4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_004: 传入的商品id与shopid不匹配</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt7.4')" >
+        pass</a>
+
+    <div id='div_Pt7.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt7.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt7.4: [2018-09-05 18:21:39,594](INFO)root : ____________________start_________________
+[2018-09-05 18:21:39,766](INFO)root : 商品id与shopid不一致请求后接口返回信息为：{'msg': '商品信息不存在！', 'systemCode': 103, 'statusCode': 1, 'data': {}}
+[2018-09-05 18:21:39,766](INFO)root : ____________________over__________________
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='Pt7.5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_005: 传入的商品id为空</div></td>
+    <td colspan='4' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt7.5')" >
+        pass</a>
+
+    <div id='div_Pt7.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt7.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+Pt7.5: [2018-09-05 18:21:39,775](INFO)root : ____________________start_________________
+[2018-09-05 18:21:39,937](INFO)root : 商品id与shopid不一致请求后接口返回信息为：{'msg': '商品ID不能为空;', 'systemCode': 103, 'statusCode': 400, 'data': {}}
+[2018-09-05 18:21:39,937](INFO)root : ____________________over__________________
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td colspan='1' align='center'>
+No Case Detail
+</td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total and Rate</td>
+    <td>58</td>
+    <td>51</td>
+    <td>7</td>
+    <td>0</td>
+    <td>Proportion:51/58</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+<div class="bg">
+                       <div class="panelBg"></div>  
+                       <div class="panel"> 
+                       <div id="section1"> 
+                           <div class="title">Pie Chart</div>  
+                           <div class="subTitle">This chart is to show the rate that statis of test cases</div> 
+                           <div class="piechart">   
+                               <canvas id="circle" width="225" height="168" onmousemove='javascript:drawCircle(51, 7, 0)'>your browser does not support the canvas tag</canvas>
+                           </div> 
+                           <div class="description">  
+                           <div class="scroll-item item-even">  
+                               <div class="rect" style="background-color: #6c6; "></div>  
+                               <div class="item-text">Passcase:51</div>  
+                           </div>  
+                           <div class="scroll-item item-odd">  
+                               <div class="rect" style="background-color: #c60; "></div>  
+                               <div class="item-text">failcase:7</div>  
+                           </div>   
+                           <div class="scroll-item item-even">  
+                               <div class="rect" style="background-color: #c00; "></div>  
+                               <div class="item-text">errorcase:0</div>  
+                           </div> 
+                           <div class="scroll-item item-odd">  
+                           </div> 
+                           <div class="scroll-item item-even">    
+                           </div> 
+                       </div> 
+
+                       </div>  
+                       <div id="section2">  
+                       <div class="title">Bar Chart</div>  
+                           <div class="subTitle">This chart is to show the count that statis of test cases</div> 
+                           <div class="barchart">   
+                               <canvas id="bar" width="225" height="168" onclick='javascript:drawBar(51, 7, 0)'>your browser does not support the canvas tag</canvas>
+                           </div> 
+                           <div class="description">  
+                           <div class="scroll-item item-even">  
+                               <div class="rect" style="background-color: #6c6; "></div>  
+                               <div class="item-text">Passcase:51</div>  
+                           </div>  
+                           <div class="scroll-item item-odd">  
+                               <div class="rect" style="background-color: #c60; "></div>  
+                               <div class="item-text">failcase:7</div>  
+                           </div>   
+                           <div class="scroll-item item-even">  
+                               <div class="rect" style="background-color: #c00; "></div>  
+                               <div class="item-text">errorcase:0</div>  
+                           </div> 
+                           <div class="scroll-item item-odd">  
+                           </div> 
+                           <div class="scroll-item item-even">    
+                           </div> 
+                       </div> 
+
+                       </div>  
+                       <div id="section3"> 
+                        <div class="title">Line Chart</div>  
+                           <div class="subTitle">This chart is to show the rate that data of test cases</div> 
+                           <div class="linechart">   
+                               <canvas id="line" width="225" height="168" onclick='javascript:drawline(51, 7, 0)'>your browser does not support the canvas tag</canvas>
+                           </div> 
+                           <div class="description">  
+                           <div class="scroll-item item-even">  
+                               <div class="rect" style="background-color: #6c6; "></div>  
+                               <div class="item-text">Passcase:51</div>  
+                           </div>  
+                           <div class="scroll-item item-odd">  
+                               <div class="rect" style="background-color: #c60; "></div>  
+                               <div class="item-text">failcase:7</div>  
+                           </div>   
+                           <div class="scroll-item item-even">  
+                               <div class="rect" style="background-color: #c00; "></div>  
+                               <div class="item-text">errorcase:0</div>  
+                           </div> 
+                           <div class="scroll-item item-odd">  
+                           </div> 
+                           <div class="scroll-item item-even">    
+                           </div> 
+                       </div> 
+
+                       </div>
+                       </div>
+                       <div class="panel1">
+                       <div id="section4">
+                           <a>51 Pass cases, 7 fail cases, 0 error cases.</a>
+                       </div>
+                       </div>
+                    </div>
+</body>
+</html>
+<script type="text/javascript"> 
+function drawCircle(pass, fail, error){ 
+    var color = ["#6c6","#c60","#c00"];  
+    var data = [pass,fail,error]; 
+    var canvas = document.getElementById("circle");  
+    var ctx = canvas.getContext("2d");  
+    var startPoint=0;  
+    for(var i=0;i<data.length;i++){  
+        ctx.fillStyle = color[i];  
+        ctx.beginPath();  
+        ctx.moveTo(112,84);   
+        ctx.arc(112,84,84,startPoint,startPoint+Math.PI*2*(data[i]/(data[0]+data[1]+data[2])),false);  
+        ctx.fill();  
+        startPoint += Math.PI*2*(data[i]/(data[0]+data[1]+data[2]));  
+    }  
+}
+
+function FillRect(cxt, x1, y1, width, height, color) {
+    cxt.fillStyle = color; 
+    cxt.fillRect(x1, y1, width, height);
+} 
+
+function drawBar(pass, fail, error){ 
+
+    var color = ["#6c6","#c60","#c00"];  
+    var data = [pass,fail,error];
+    var count = pass + fail + error;
+    var h =[10+(1 - pass/count)*148,10+(1 - fail/count)*148,10+(1 - error/count)*148];
+    var x = [30,90,150];
+    var y = [70,130,190];
+    var canvas = document.getElementById("bar");  
+    var ctx = canvas.getContext("2d");
+    DrawString(ctx, 'Count(c)', '', '', '', '', 15, 10)
+    DrawLine(ctx,5,15,10,10,'black');
+    DrawLine(ctx,15,15,10,10,'black');
+    DrawLine(ctx,10,10,10,158,'black');
+    DrawLine(ctx,10,158,215,158,'black');
+    DrawLine(ctx,210,153,215,158,'black');
+    DrawLine(ctx,210,163,215,158,'black');
+    DrawString(ctx, 'Type(c)', '', '', '', '', 180, 160)
+    for(var i=0;i<3;i++) {
+        DrawLine(ctx,x[i],h[i],x[i],158,color[i]);
+        DrawLine(ctx,x[i],h[i],y[i],h[i],color[i]);
+        DrawLine(ctx,y[i],h[i],y[i],158,color[i]); 
+        DrawLine(ctx,(y[i]+x[i])/2,153,(y[i]+x[i])/2,158,color[i]);
+        DrawString(ctx, data[i], '', color[i], '', '', (y[i]+x[i])/2, h[i]-15);
+        FillRect(ctx, x[i], h[i], 40, 158-h[i], color[i]);
+    }
+} 
+
+function DrawP(ctx, P) {
+    with (ctx) {
+        moveTo(P[0],P[1]);
+        lineTo(P[0]+1,P[1]+1);
+     }
+}
+
+function DrawLine(cxt, x1, y1, x2, y2, color) {
+
+    cxt.strokeStyle = color;
+    cxt.beginPath();
+    cxt.moveTo(x1, y1);
+    cxt.lineTo(x2, y2);
+    cxt.stroke();
+}
+
+function DrawString(cxt, text, font, color, align, v_align, x, y) {
+    if (font == "") {
+        cxt.font = "10px";
+    }
+    else {
+        cxt.font = font;
+    }
+    if (color == "") {
+        cxt.fillStyle = "#000000";
+    }
+    else {
+        cxt.fillStyle = color;
+    }
+    if (align == "") {
+        cxt.textAlign = "left";
+    }
+    else {
+        cxt.textAlign = align;
+    }
+    if (v_align == "") {
+        cxt.textBaseline = "top";
+    }
+    else {
+        cxt.textBaseline = v_align;
+    }
+    cxt.fillText(text, x, y);
+}
+
+function drawline(pass, fail, error){ 
+    var color = ["#6c6","#c60","#c00"];  
+    var data = [pass,fail,error];
+    var count = pass + fail + error;
+    var x = [30,90,150];
+    var y = [70,130,190];
+    var h =[10+(1 - pass/count)*148,10+(1 - fail/count)*148,10+(1 - error/count)*148];
+    var canvas = document.getElementById("line");  
+    var ctx = canvas.getContext("2d");
+    DrawString(ctx, 'Count(c)', '', '', '', '', 15, 10)
+    DrawLine(ctx,5,15,10,10,'black');
+    DrawLine(ctx,15,15,10,10,'black');
+    DrawLine(ctx,10,10,10,158,'black');
+    DrawLine(ctx,10,158,215,158,'black');
+    DrawLine(ctx,210,153,215,158,'black');
+    DrawLine(ctx,210,163,215,158,'black');
+    DrawString(ctx, 'Type(c)', '', '', '', '', 180, 160)
+    for(var i=0;i<3;i++) {
+        p = Array((y[i]+x[i])/2,h[i]);
+        DrawP(ctx,p);
+        DrawLine(ctx,(y[i]+x[i])/2,153,(y[i]+x[i])/2,158,color[i]);
+        DrawString(ctx, data[i], '', color[i], '', '', (y[i]+x[i])/2, h[i]-15);
+        if(i < 2) {
+        
+            DrawLine(ctx,(y[i]+x[i])/2,h[i],(y[i+1]+x[i+1])/2,h[i+1],'black');
+            
+        }
+        
+    }
+    
+} 
+
+</script>  
